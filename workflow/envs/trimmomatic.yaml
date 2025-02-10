@@ -1,0 +1,8 @@
+channels:
+  - bioconda
+  - defaults
+  - conda-forge
+dependencies:
+  - trimmomatic=0.39
+  - isa-l=2.31.0
+  - fastp=0.24.0

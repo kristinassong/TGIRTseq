@@ -1,0 +1,43 @@
+import os
+import pandas as pd
+
+__author__ = "Kristina Sungeun Song"
+__email__ = "kristina.song@usherbrooke.ca"
+
+configfile: "config/config.yaml"
+
+
+#############################
+## Samples Information
+#############################
+
+SAMPLES = config["samples"]
+
+df = pd.read_csv('resources/comparisons.tsv', sep=r'\s+')
+comparisons = ["%s-%s" % (cdn1,cdn2) for [cdn1, cdn2] in df.values.tolist()]
+
+df_cond = pd.read_csv('resources/design.tsv', sep=r'\s+', usecols=['sample','condition'])
+conditions = df_cond['condition'].unique().tolist()
+
+#############################
+## Load rules
+#############################
+
+include: "rules/trim.smk"
+include: "rules/align.smk"
+include: "rules/quantification.smk"
+include: "rules/diffexp.smk"
+include: "rules/plots.smk"
+
+
+#############################
+## Target rules
+#############################
+
+rule all:
+    input:
+        bedgraphs = expand("results/coco_cb/{sample}.bedgraph", sample=SAMPLES),
+        pca = expand("results/pca/pca_{comp}.svg", comp=comparisons),
+        multiqc = expand("results/multiqc/{comp}/multiqc_report.html", comp=comparisons),
+        deseq = expand("results/deseq2/{comp}.csv",comp=comparisons),
+        volcano_plot = expand("results/deseq2/{comp}.svg", comp=comparisons),

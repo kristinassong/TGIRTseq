@@ -1,0 +1,9 @@
+sample	condition
+HCV_Genotype1_TNccHI_n1	HCV
+HCV_Genotype1_TNccHI_n2	HCV
+HCV_Genotype1_TNccHI_n3	HCV
+HCV_Genotype1_TNccHI_n4	HCV
+MOCK_n1	Control
+MOCK_n2	Control
+MOCK_n3	Control
+MOCK_n4	Control

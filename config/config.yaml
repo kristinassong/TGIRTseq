@@ -1,0 +1,5 @@
+samples: ['HCV_Genotype1_TNccHI_n1','HCV_Genotype1_TNccHI_n2','HCV_Genotype1_TNccHI_n3','HCV_Genotype1_TNccHI_n4','MOCK_n1','MOCK_n2','MOCK_n3','MOCK_n4']
+
+path:
+  genome_fasta: "/home/kris98/projects/def-scottmic/kris98/annotation_datasets/Homo_sapiens.GRCh38.110.dna.primary_assembly.fa"
+  genome_gtf: "/home/kris98/projects/def-scottmic/kris98/annotation_datasets/Homo_sapiens.GRCh38.110_snoRNAs_tRNAs_customrRNAs_pseudorRNAs.gtf"

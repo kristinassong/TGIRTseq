@@ -1,0 +1,8 @@
+channels:
+  - default
+  - bioconda
+  - conda-forge
+dependencies:
+  - star=2.7.11b
+  - bedtools=2.30.0
+  - samtools=1.16.1
