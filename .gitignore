@@ -1,0 +1,4 @@
+# Snakemake outputs
+results/
+resources/samples/
+.snakemake
