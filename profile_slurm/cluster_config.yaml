@@ -8,8 +8,8 @@ __default__:
   ntasks: 1
   mem: 32000M
   cpus-per-task: 16
-  output: results/logs/slurmout/{rule}.{wildcards}.out
-  error: results/logs/slurmout/{rule}.{wildcards}.err
+  output: results/logs/slurmout/{rule}.{wildcards}.%j.out
+  error: results/logs/slurmout/{rule}.{wildcards}.%j.err
 
 
 star_index:
